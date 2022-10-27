@@ -1,0 +1,32 @@
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { getHomePage } from "./lib/home-page";
+import Layout, { siteTitle } from "../components/layout";
+
+export async function getStaticProps() {
+  let postData = await getHomePage();
+  return {
+    props: { postData },
+  };
+}
+
+export default function Home({ postData }) {
+  return (
+    <Layout>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <main>
+        <h2>tt test</h2>
+        <ul>
+          {postData.map((postItem) => (
+            <li key={postItem.posts.id}>
+              <h3>{postItem.posts.title}</h3>
+              <p>{postItem.posts.content}</p>
+            </li>
+          ))}
+        </ul>
+      </main>
+    </Layout>
+  );
+}

@@ -1,0 +1,15 @@
+.inner {
+ max-width: calc(1200px + 6vw);
+ padding: 0 3%;
+ margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
