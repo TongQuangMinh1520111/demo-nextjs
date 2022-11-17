@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { getHomePage } from "./lib/home-page";
 import Layout, { siteTitle } from "../components/layout";
+import LoginBtn from "../components/login-btn";
 
 export async function getStaticProps() {
   let postData = await getHomePage();
@@ -12,18 +13,39 @@ export async function getStaticProps() {
 }
 
 export default function Home({ postData }) {
+  console.log(postData);
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <main id="main">
+        <section className="testapi">
+          <h3>testttttttttttt</h3>
+          <div>
+            {postData.map((post) => (
+              <div key={post.posts.id}>
+                {post.posts.id}
+                {post.posts.content.map((img) => (
+                  <div key={post.posts.id}>
+                     <img
+                      src={img.mainv_img}
+                      alt="MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q"
+                    />
+                  
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <LoginBtn/>
+        </section>
         <section id="idx_mainvisual">
           <div className="inner">
-            <div class="mainv_cont">
+            <div className="mainv_cont">
               <h2>MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q</h2>
-              <div class="section">
-                <p class="mainv_txt">
+              <div className="section">
+                <p className="mainv_txt">
                   A + Front grade tempered glass 0,5mm Thickness (Mặt trước và
                   bên kính cường lực)
                   <br />
@@ -36,48 +58,48 @@ export default function Home({ postData }) {
                   Kích thước Case: 270x168x350mm
                 </p>
               </div>
-              <div class="btn_more">
+              <div className="btn_more">
                 <a href="#">Xem Thêm</a>
               </div>
             </div>
           </div>
         </section>
         <section id="idx_product">
-          <div class="inner">
-            <ul class="product_slider slider">
-              <li class="item">
-                <div class="product_card">
-                  <figure class="product_img">
+          <div className="inner">
+            <ul className="product_slider slider">
+              <li className="item">
+                <div className="product_card">
+                  <figure className="product_img">
                     <img
                       src="images/product_img01.jpg"
                       alt="MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q"
                     />
                   </figure>
-                  <div class="card_cont">
+                  <div className="card_cont">
                     <h4>MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q</h4>
-                    <p class="p_txt">
+                    <p className="p_txt">
                       27INCH ESPORT GAMING VG273Q, MAX 165HZ, 1MS(MPRT) , FREE
                       SYNC, HDR
                     </p>
-                    <p class="btn_details">
+                    <p className="btn_details">
                       <a href="#">Xem chi tiết</a>
                     </p>
                   </div>
                 </div>
-                <div class="product_card">
-                  <figure class="product_img">
+                <div className="product_card">
+                  <figure className="product_img">
                     <img
                       src="images/product_img03.jpg"
                       alt="MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q"
                     />
                   </figure>
-                  <div class="card_cont">
+                  <div className="card_cont">
                     <h4>MÀN HÌNH VSP ESPORT GAMING 2K QHD 27INCH - VG273Q</h4>
-                    <p class="p_txt">
+                    <p className="p_txt">
                       27INCH ESPORT GAMING VG273Q, MAX 165HZ, 1MS(MPRT) , FREE
                       SYNC, HDR
                     </p>
-                    <p class="btn_details">
+                    <p className="btn_details">
                       <a href="#">Xem chi tiết</a>
                     </p>
                   </div>
@@ -88,7 +110,7 @@ export default function Home({ postData }) {
         </section>
 
         <section id="idx_banner">
-          <div class="inner">
+          <div className="inner">
             <figure>
               <img src="images/banner01.jpg" alt="" />
             </figure>
@@ -99,10 +121,10 @@ export default function Home({ postData }) {
         </section>
 
         <section id="idx_video">
-          <div class="inner">
-            <ul class="video_list">
+          <div className="inner">
+            <ul className="video_list">
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -111,7 +133,7 @@ export default function Home({ postData }) {
                 <h4>CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY</h4>
               </li>
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -120,7 +142,7 @@ export default function Home({ postData }) {
                 <h4>CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY</h4>
               </li>
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -129,7 +151,7 @@ export default function Home({ postData }) {
                 <h4>CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY</h4>
               </li>
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -138,7 +160,7 @@ export default function Home({ postData }) {
                 <h4>CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY</h4>
               </li>
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -147,7 +169,7 @@ export default function Home({ postData }) {
                 <h4>CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY</h4>
               </li>
               <li>
-                <div class="video_fr">
+                <div className="video_fr">
                   <img
                     src="images/video.jpg"
                     alt="CHƯƠNG TRÌNH ƯU ĐÃI THÁNG 7 VUI HÈ LÊN MÁY"
@@ -159,27 +181,27 @@ export default function Home({ postData }) {
           </div>
         </section>
         <section id="idx_news">
-          <div class="inner">
-            <div class="news_cont">
-              <div class="news_left">
+          <div className="inner">
+            <div className="news_cont">
+              <div className="news_left">
                 <a href="#">
-                  <div class="news_card">
+                  <div className="news_card">
                     <figure>
                       <img
                         src="images/news_img01.jpg"
                         alt="XBOX THẾ HỆ TIẾP THEO CỦA MICROSOFT CÓ ĐỒ HỌA 8K, HỖ TRỢ "
                       />
                     </figure>
-                    <div class="section">
-                      <h4 class="news_ttl">
+                    <div className="section">
+                      <h4 className="news_ttl">
                         XBOX THẾ HỆ TIẾP THEO CỦA MICROSOFT CÓ ĐỒ HỌA 8K, HỖ TRỢ
                         ...
                       </h4>
-                      <p class="meta">
+                      <p className="meta">
                         <span>17:18, 02/08/2020</span>
                         <span>Tin Thị Trường</span>
                       </p>
-                      <p class="news_txt">
+                      <p className="news_txt">
                         AMD không chỉ đang tiến bước mạnh mẽ với vi xử lý Ryzen.
                         Có những dấu hiệu cho thấy thành công lớn sắp đến với họ
                         trên &quot;chiến trường&quot; card đồ họa, khi mà công
@@ -190,27 +212,27 @@ export default function Home({ postData }) {
                       </p>
                     </div>
                   </div>
-                  <p class="news_details">Xem chi tiết</p>
+                  <p className="news_details">Xem chi tiết</p>
                 </a>
               </div>
-              <div class="news_right">
+              <div className="news_right">
                 <a href="#">
                   <dl>
                     <dt>
                       <img src="images/news_img02.jpg" alt="" />
                     </dt>
                     <dd>
-                      <div class="section">
-                        <h4 class="news_ttl">
+                      <div className="section">
+                        <h4 className="news_ttl">
                           MỘT CHIẾC PC CẤU HÌNH TƯƠNG TỰ MAC PRO 6.000 USD SẼ CÓ
                           GIÁ BAO ...
                         </h4>
-                        <p class="meta">
+                        <p className="meta">
                           <span>17:18, 02/08/2020</span>
                           <span>Tin Thị Trường</span>
                         </p>
                       </div>
-                      <p class="news_details">Xem chi tiết</p>
+                      <p className="news_details">Xem chi tiết</p>
                     </dd>
                   </dl>
                 </a>
@@ -220,17 +242,17 @@ export default function Home({ postData }) {
                       <img src="images/news_img02.jpg" alt="" />
                     </dt>
                     <dd>
-                      <div class="section">
-                        <h4 class="news_ttl">
+                      <div className="section">
+                        <h4 className="news_ttl">
                           MỘT CHIẾC PC CẤU HÌNH TƯƠNG TỰ MAC PRO 6.000 USD SẼ CÓ
                           GIÁ BAO ...
                         </h4>
-                        <p class="meta">
+                        <p className="meta">
                           <span>17:18, 02/08/2020</span>
                           <span>Tin Thị Trường</span>
                         </p>
                       </div>
-                      <p class="news_details">Xem chi tiết</p>
+                      <p className="news_details">Xem chi tiết</p>
                     </dd>
                   </dl>
                 </a>
@@ -240,17 +262,17 @@ export default function Home({ postData }) {
                       <img src="images/news_img02.jpg" alt="" />
                     </dt>
                     <dd>
-                      <div class="section">
-                        <h4 class="news_ttl">
+                      <div className="section">
+                        <h4 className="news_ttl">
                           MỘT CHIẾC PC CẤU HÌNH TƯƠNG TỰ MAC PRO 6.000 USD SẼ CÓ
                           GIÁ BAO ...
                         </h4>
-                        <p class="meta">
+                        <p className="meta">
                           <span>17:18, 02/08/2020</span>
                           <span>Tin Thị Trường</span>
                         </p>
                       </div>
-                      <p class="news_details">Xem chi tiết</p>
+                      <p className="news_details">Xem chi tiết</p>
                     </dd>
                   </dl>
                 </a>
@@ -259,49 +281,51 @@ export default function Home({ postData }) {
           </div>
         </section>
         <section id="idx_contact">
-          <figure class="contact_img">
+          <figure className="contact_img">
             <img src="images/contact_img.jpg" alt="" />
           </figure>
-          <div class="contact_cont">
-            <div class="box_left">
-              <h4 class="c_ttl">LIÊN HỆ NGAY ĐỂ ĐỒNG HÀNH CÙNG CHÚNG TÔI</h4>
-              <p class="c_txt">
+          <div className="contact_cont">
+            <div className="box_left">
+              <h4 className="c_ttl">
+                LIÊN HỆ NGAY ĐỂ ĐỒNG HÀNH CÙNG CHÚNG TÔI
+              </h4>
+              <p className="c_txt">
                 Nếu bạn có nhu cầu liên hệ với VSPTECH, vui lòng điền đầy đủ
                 thông tin theo form dưới đây.
               </p>
-              <div class="c_form">
+              <div className="c_form">
                 <ul>
                   <li>
                     <input
-                      class="input_txt"
+                      className="input_txt"
                       type="text"
                       placeholder="Họ tên *"
                     />
                   </li>
                   <li>
                     <input
-                      class="input_txt"
+                      className="input_txt"
                       type="text"
                       placeholder="Địa chỉ"
                     />
                   </li>
                   <li>
                     <input
-                      class="input_txt"
+                      className="input_txt"
                       type="text"
                       placeholder="Email *"
                     />
                   </li>
                   <li>
                     <input
-                      class="input_txt"
+                      className="input_txt"
                       type="text"
                       placeholder="Điện thoại *"
                     />
                   </li>
-                  <li class="c-texterea">
+                  <li className="c-texterea">
                     <textarea
-                      class="textarea_txt"
+                      className="textarea_txt"
                       name=""
                       id=""
                       cols="30"
@@ -309,27 +333,27 @@ export default function Home({ postData }) {
                       placeholder="Nội dung liên hệ *"
                     ></textarea>
                   </li>
-                  <li class="cap">
-                    <p class="cap-box">
+                  <li className="cap">
+                    <p className="cap-box">
                       <input
-                        class="input_cap"
+                        className="input_cap"
                         type="text"
                         placeholder="Mã bảo mật *"
                       />
-                      <span class="cap-code">
+                      <span className="cap-code">
                         <img src="images/cap.jpg" alt="" width="88" />
                       </span>
                     </p>
-                    <p class="btn_submit">
+                    <p className="btn_submit">
                       <input type="submit" name="" id="" value="Gửi" />
                     </p>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="box_right">
-              <h4 class="c_ttl">ĐỊA CHỈ MUA HÀNG</h4>
-              <ul class="box_select">
+            <div className="box_right">
+              <h4 className="c_ttl">ĐỊA CHỈ MUA HÀNG</h4>
+              <ul className="box_select">
                 <li>
                   <select name="" id="">
                     <option value="vietnam">Việt Nam</option>
@@ -341,10 +365,10 @@ export default function Home({ postData }) {
                   </select>
                 </li>
               </ul>
-              <div class="address">
-                <div class="section">
-                  <p class="c_txt02">Công ty: TIN HỌC NGÔI SAO</p>
-                  <p class="c_txt02">
+              <div className="address">
+                <div className="section">
+                  <p className="c_txt02">Công ty: TIN HỌC NGÔI SAO</p>
+                  <p className="c_txt02">
                     Địa chỉ: 185-189 Âu Cơ, P.14, Q.11, TP.Hồ Chí Minh
                     <br />
                     Email: hotrovsp@vsp.vn
@@ -352,9 +376,9 @@ export default function Home({ postData }) {
                     Hotline: 1900xxxx
                   </p>
                 </div>
-                <div class="section">
-                  <p class="c_txt02">Công ty: TIN HỌC NGÔI SAO</p>
-                  <p class="c_txt02">
+                <div className="section">
+                  <p className="c_txt02">Công ty: TIN HỌC NGÔI SAO</p>
+                  <p className="c_txt02">
                     Địa chỉ: 185-189 Âu Cơ, P.14, Q.11, TP.Hồ Chí Minh
                     <br />
                     Email: hotrovsp@vsp.vn
@@ -365,7 +389,7 @@ export default function Home({ postData }) {
               </div>
             </div>
           </div>
-          <div class="location">
+          <div className="location">
             <ul>
               <li>
                 <i></i>TRỤ SỞ CHÍNH: 44A Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí

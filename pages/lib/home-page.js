@@ -5,10 +5,6 @@ export async function getHomePage(){
     let response = await axios.get("https://dev.nextjs/wp-json/json/v1/home-page");
     return response.data.map(posts => {
           return {
-            // id: post.id.toString(),
-            // title:post.title.toString(),
-            // content:post.content.toString(),
-
             posts
           }
         })

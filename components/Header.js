@@ -2,6 +2,7 @@
 
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -30,7 +31,7 @@ export default function Header() {
               <a href="https://vsptech.vn/dich-vu.html">DỊCH VỤ</a>
             </li>
             <li>
-              <a href="https://vsptech.vn/san-pham.html">SẢN PHẨM</a>
+            <Link href="/product">Product</Link>
             </li>
             <li>
               <a href="#">TIN TỨC</a>
